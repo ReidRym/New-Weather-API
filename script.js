@@ -25,8 +25,7 @@ $("#toggleClear").click(function () {
 
 function geoCode(searchValue) {
   fetch(
-    // "https://api.openweathermap.org/geo/1.0/direct?q=Honolulu&limit=5&appid=fffd1dee7dc1225b9925321082352871"
-     `http://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=${apiKey}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=${apiKey}`
   )
     .then(response => response.json())
     .then(data => {
@@ -37,15 +36,14 @@ function geoCode(searchValue) {
       $(".history").append(searchHistory);
       currentWeather(data[0].lat, data[0].lon);
       weatherForecast(data[0].lat, data[0].lon);
-      $("#menu-toggle").click(function(){ 
-          $("#popCol-9").show(1000); 
-        });
-        
-        $("#geoCode").click(function(){ 
-          $("#popCol-9").show(1000);
-        });
+      $("#menu-toggle").click(function () {
+        $("#popCol-9").show(1000);
+      });
+
+      $("#geoCode").click(function () {
+        $("#popCol-9").show(1000);
+      });
     });
-   
 }
 function currentWeather(lat, lon) {
   fetch(
