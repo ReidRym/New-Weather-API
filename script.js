@@ -104,11 +104,7 @@ function weatherForecast(lat, lon) {
 
 geoCode("Honolulu");
 
-//  $("#menu-toggle").click(function(){
-//  $("#popCol-9").show(1000);
-//  $("geoCode").click(function(){
-//  $("#popCol-9").show(1000);
-//});
+
 
 function clearData() {
   document.querySelector(".searchTerm").value = "";
